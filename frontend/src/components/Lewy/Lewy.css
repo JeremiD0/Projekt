@@ -1,0 +1,90 @@
+.Lewy {
+    background: darkblue;
+    border-radius: 30px;
+    height: 856px;
+    width: 15%;
+    text-align: center;
+    float: left;
+    margin-top: 45px;
+    margin-right: 50px;
+    margin-left: 35px;
+    margin-bottom: 35px;
+    padding-top: 20px;
+    word-wrap: break-word;
+}
+
+.Lewy h1 {
+    color: white;
+}
+
+.Lewy button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 600;
+    font-size: 15px;
+    border-style: solid;
+    background-color: white;
+}
+
+.Lewy button:hover {
+    cursor: pointer;
+}
+
+.Lewy input {
+    font-size: 15px;
+    font-family: Arial;
+    padding: 8px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.Lewy input:hover {
+    cursor: pointer;
+}
+
+.Lewy select {
+    font-size: 15px;
+    font-family: Arial;
+    padding: 5px;
+    background-color: white;
+    border-color: black;
+}
+
+.Lewy select:hover {
+    cursor: pointer;
+}
+
+.Lewy p {
+    color: white;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.Lewy label {
+    color: lightgray;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.Lewy .checkbox1 
+    {
+    margin-left: -10em;
+    display: flex;
+    align-items:flex-start;
+          
+}
+
+.Lewy .c1Child{
+    margin-left: -10em;
+}

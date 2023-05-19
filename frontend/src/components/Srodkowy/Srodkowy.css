@@ -1,0 +1,65 @@
+
+
+.Srodkowy {
+    background-image: url(bground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 124%;
+    background-position-x: 50%;
+    background-position-y: 60%;
+       
+    color: white;
+    border-radius: 30px;
+    height: 90%;
+    width: 55%;
+    text-align: center;
+    float: left;
+    margin-top: 2.5%;
+    margin-right: 3%;
+    margin-left:  3%;
+    margin-bottom: 4%;
+    padding-top: 2%;
+    word-wrap: break-word;
+    max-width: 55%;
+    max-height: 865px;
+    overflow: auto;
+}
+
+.Srodkowy textarea {
+    resize: none;
+    float: center;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.Srodkowy button {
+    margin-top: 3px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 600;
+    font-size: 15px;
+    border-style: solid;
+    background-color: white;
+}
+
+.Srodkowy button:hover {
+    cursor: pointer;
+}
+
+.Srodkowy .button {
+    margin-top: 40em;
+    float: right;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+  }
