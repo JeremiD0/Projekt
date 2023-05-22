@@ -1,6 +1,6 @@
 import React from "react";
 import './Lewy.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 
 function MojaKomponenta() {
