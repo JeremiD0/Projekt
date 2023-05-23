@@ -11,11 +11,7 @@ export default class Prawy extends React.Component {
                     NOTATKI
                 </h1>
                 <App/>
-                <div className="btn">
-                    <button type="submit" name="edytuj_notatke" id="edytuj_notatke">
-                        Edytuj
-                    </button>
-                </div>
+               
             </div>
         )
     }

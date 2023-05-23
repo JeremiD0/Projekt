@@ -21,6 +21,8 @@ const App = () => {
     }
   };
 
+  setTimeout(fetchData, 1000)
+
   const handleButtonClick = async () => {
     try {
       await axios.post('http://localhost:3333/api/notatki', { tekst: inputValue });
@@ -52,8 +54,11 @@ const App = () => {
       })
     })
       
-        fetchData(); 
+
+    
         setConfirmation(false); 
+         fetchData(); 
+
      
       
   }
