@@ -21,8 +21,6 @@ const App = () => {
     }
   };
 
-  setTimeout(fetchData, 1000)
-
   const handleButtonClick = async () => {
     try {
       await axios.post('http://localhost:3333/api/notatki', { tekst: inputValue });
@@ -32,14 +30,6 @@ const App = () => {
     }
   };
 
-  const handleClick = () => {
-    if (confirmation) {
-      fetchDel();
-      setConfirmation(false)
-    } else {
-      setConfirmation(true);
-    }
-  };
 
   function fetchDel() {
     fetch('http://localhost:3333/api/notatki/delete', {
@@ -53,15 +43,21 @@ const App = () => {
         "elementId": note
       })
     })
-      
-
     
-        setConfirmation(false); 
-         fetchData(); 
-
-     
-      
+    
   }
+
+  const handleClick = () => {
+    if (confirmation) {
+      fetchDel()
+      setConfirmation(false)
+      setTimeout(fetchData, 900)
+    } else {
+      setConfirmation(true);
+    }
+  };
+
+ 
 
   return (
     <div>
@@ -70,7 +66,8 @@ const App = () => {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button onClick={handleButtonClick}>Dodaj</button>
+      <button onClick={handleButtonClick} >Dodaj</button>
+      
 
       {notatki.map((notatka) => (
         <NoteTile key={notatka.id} setNote={setNote} id={notatka.id} tekst={notatka.tekst} />
