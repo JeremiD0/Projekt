@@ -88,3 +88,23 @@
 .Lewy .c1Child{
     margin-left: -10em;
 }
+
+.Lewy input.NameInput:focus{
+    box-shadow: 0px 0px 30px white; 
+    outline: none;
+}
+
+.Lewy select.sala:focus{
+    box-shadow: 0px 0px 30px white; 
+    outline: none;
+}
+
+.Lewy select option.sala{
+    box-shadow: 0px 0px 30px white; 
+    outline: none;
+}
+
+.Lewy input.kalendarz:focus{
+    box-shadow: 0px 0px 30px white; 
+    outline: none;
+}

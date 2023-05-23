@@ -1,3 +1,5 @@
+import './Prawy.css';
+
 export default function NoteTile(props) {
 
     function handleClick2(){
@@ -12,7 +14,9 @@ export default function NoteTile(props) {
                      defaultValue={
                         props.tekst
                     }
-                    readOnly={true}/>
+                    readOnly={true}
+                    className="notatka"
+                    />
         </>
     )
 }

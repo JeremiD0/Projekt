@@ -5,7 +5,6 @@ import Lewy from './components/Lewy/Lewy'
 import Prawy from './components/Prawy/Prawy'
 import Srodkowy from './components/Srodkowy/Srodkowy'
 
-
 function App() {
 
     const[token, setToken] = useState();
@@ -15,14 +14,22 @@ function App() {
     {
         return <LoginForm setToken={setToken} /> 
     }
-    
+    function logOut() {
+        <LoginForm setToken={setToken(false)}/>
+    }
     return (
             <div className="app">
+                
+                <div className='buttonDiv'>
+        <button className='LogOutBtn' onClick={logOut} ></button>
+        </div>   
+                
                 <Lewy />
-
+             
                 <Srodkowy />
-
+               
                 <Prawy />
+               
             </div>
         )
 }

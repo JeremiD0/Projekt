@@ -5,6 +5,7 @@ body {
 }
 
 .app {
+    display: flex;
     height: 100%;
 }
 
@@ -83,5 +84,15 @@ body {
 }
 
 
+.buttonDiv{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;    
+}
 
-
+.buttonDiv .LogOutBtn{
+    text-align: left;
+    padding: 20px;
+    background-color: red;
+    border-top-right-radius: 3em;
+}

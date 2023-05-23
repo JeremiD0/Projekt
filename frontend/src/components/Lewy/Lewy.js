@@ -21,6 +21,7 @@ function MojaKomponenta() {
           type="date"
           value={dzisiejszaData}
           onChange={(e) => setDzisiejszaData(e.target.value)}
+          className="kalendarz"
         />
         <button onClick={ustawDzisiejszaDate}>Ustaw dzisiejszą datę</button>
       </div>
@@ -38,11 +39,11 @@ export default function Lewy()
                 <h1> Stwórz fiszkę: </h1>
                 <label>
                     <p> Nazwa: </p>
-                    <input type="text" />
+                    <input className="NameInput" type="text" />
                 </label>
                 <label>
                     <p> Sala: </p>
-                    <select>
+                    <select className="sala">
                         <option> Sala 1 </option>
                         <option> Sala 2 </option>
                         <option> Sala 3 </option>
@@ -69,7 +70,7 @@ export default function Lewy()
                 </label>
                 <label>
                     <p> Opis (opcjonalnie): </p>
-                    <input type="text" placeholder="" />
+                    <input className="NameInput" type="text" /> 
                 </label>
                 <div>
                     <button type="submit"> Dodaj </button> <button type="submit"> Wyczyść </button>

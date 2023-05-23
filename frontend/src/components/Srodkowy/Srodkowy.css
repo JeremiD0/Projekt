@@ -6,8 +6,7 @@
     background-size: cover;
     background-size: 124%;
     background-position-x: 50%;
-    background-position-y: 60%;
-       
+    background-position-y: 60%;   
     color: white;
     border-radius: 30px;
     height: 90%;
@@ -56,6 +55,11 @@
 .Srodkowy .button {
     margin-top: 40em;
     float: right;
+}
+
+.Srodkowy .Fiszka:focus{
+    box-shadow: 0px 0px 20px whitesmoke;
+    outline: none;
 }
 
 ::-webkit-scrollbar {

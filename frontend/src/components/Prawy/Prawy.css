@@ -1,5 +1,5 @@
 .Prawy {
-    background: darkblue;
+    background: #00008b;
     color: white;
     border-radius: 30px;
     height: 865px;
@@ -47,7 +47,7 @@
 }
 
 .Prawy button {
-    margin-top: 3px;
+    text-align: center;
     margin-bottom: 20px;
     margin-right: 15px;
     padding-top: 5px;
@@ -55,9 +55,11 @@
     padding-left: 15px;
     padding-right: 15px;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 20px;
     border-style: solid;
     background-color: white;
+    border-radius: 3em;
+    padding: 0px,3px,0px,3px;
 }
 
 .Prawy button:hover {
@@ -68,5 +70,38 @@
     text-align: center;
     margin-top: 10px;
     margin-bottom: 0px;
-    margin-right: 0px;
+    margin-right: 0px;  
 }
+
+
+.Prawy textarea{
+    background-color: rgb(133, 128, 168);
+    text-align: center;
+    color: white;
+    font-size: large;
+    border-radius: 2em;
+    padding: 1em;
+    
+}
+
+
+
+.Prawy textarea:focus{
+    outline: none;
+    box-shadow: 0px 0px 20px whitesmoke;
+
+}
+
+.Prawy .dodajbtn{
+    background-color: green;
+}
+
+
+.Prawy input:focus {
+    box-shadow: 0px 0px 30px white; /* przykładowy cień */
+    outline: none;
+  }
+
+
+
+
