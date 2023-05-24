@@ -90,9 +90,68 @@ body {
     align-items: flex-end;    
 }
 
+
+
+
 .buttonDiv .LogOutBtn{
     text-align: left;
     padding: 20px;
     background-color: red;
+    font-size: 2em;
     border-top-right-radius: 3em;
 }
+
+.buttonDiv .LogOutBtn::after{
+    content: attr(data-tooltip);
+    
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 15px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+    
+    }
+.buttonDiv .LogOutBtn:hover::after{
+        opacity: 1;
+        visibility: visible;
+    
+}
+
+.buttonDiv .NewUserBtn{
+    text-align: left;
+    padding: 20px;
+    background-color: green;
+    font-size: 2em;
+    border-top-left-radius: 3em;
+}
+
+.buttonDiv .NewUserBtn::after{
+content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+
+}
+
+.buttonDiv .NewUserBtn:hover::after{
+    opacity: 1;
+    visibility: visible;
+
+}
+
+
+

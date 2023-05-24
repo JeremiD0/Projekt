@@ -53,7 +53,9 @@ export default function LoginForm({ setToken }) {
                 </label>
                 <div>
                     <button type="submit"> Zaloguj </button>
+                  
                 </div>
+                
                 <span id="err_message_span">  </span>
             </form>
         </div>
