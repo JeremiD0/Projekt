@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: Maj 10, 2023 at 12:40 PM
+-- Host: 127.0.0.1
+-- Generation Time: Maj 29, 2023 at 09:21 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -34,14 +34,15 @@ CREATE TABLE `fiszka` (
   `sala` varchar(50) DEFAULT NULL,
   `wykonawca` varchar(50) DEFAULT NULL,
   `deadline` date DEFAULT NULL,
-  `twórca` varchar(100) DEFAULT NULL
+  `tworca` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Wyzwalacze `fiszka`
 --
 DELIMITER $$
-CREATE TRIGGER `historia_trigger` BEFORE DELETE ON `fiszka` FOR EACH ROW INSERT INTO historia(nazwa, opis, sala, wykonawca, deadline, twórca) VALUES(old.nazwa, old.opis, old.sala, old.wykonawca, old.deadline, old.twórca)
+CREATE TRIGGER `backup` BEFORE DELETE ON `fiszka` FOR EACH ROW INSERT into historia(`id`,`nazwa`,`opis`,`sala`,`wykonawca`,`deadline`,`tworca`)
+VALUES(OLD.id,OLD.nazwa,OLD.opis,OLD.sala,OLD.wykonawca,OLD.deadline,OLD.tworca)
 $$
 DELIMITER ;
 
@@ -58,8 +59,15 @@ CREATE TABLE `historia` (
   `sala` varchar(50) DEFAULT NULL,
   `wykonawca` varchar(50) DEFAULT NULL,
   `deadline` date DEFAULT NULL,
-  `twórca` varchar(100) DEFAULT NULL
+  `tworca` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Dumping data for table `historia`
+--
+
+INSERT INTO `historia` (`id`, `nazwa`, `opis`, `sala`, `wykonawca`, `deadline`, `tworca`) VALUES
+(80, 'TEST ', 'CHUJ W DUPE POLICJI', 'Sala 3', 'Jeremi', '2023-05-30', NULL);
 
 -- --------------------------------------------------------
 
@@ -77,7 +85,8 @@ CREATE TABLE `logowanie` (
 --
 
 INSERT INTO `logowanie` (`login`, `haslo`) VALUES
-('MK', 'AMW1');
+('Jeremi', '$2b$10$l5TJ4QvmGKvcvBHIwzhKnufZH0es.xOwfHwyntajqO8rI2haZy5sO'),
+('MK', '$2b$10$xTIpPUP8/Demfo06ob7oCuQi5z/cxgS/G52WCJHslfSn.7ZQpWhQC');
 
 -- --------------------------------------------------------
 
@@ -100,7 +109,7 @@ CREATE TABLE `notatka` (
 --
 ALTER TABLE `fiszka`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `twórca` (`twórca`);
+  ADD KEY `twórca` (`tworca`);
 
 --
 -- Indeksy dla tabeli `historia`
@@ -129,19 +138,19 @@ ALTER TABLE `notatka`
 -- AUTO_INCREMENT for table `fiszka`
 --
 ALTER TABLE `fiszka`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `historia`
 --
 ALTER TABLE `historia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `notatka`
 --
 ALTER TABLE `notatka`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- Constraints for dumped tables
@@ -151,7 +160,7 @@ ALTER TABLE `notatka`
 -- Constraints for table `fiszka`
 --
 ALTER TABLE `fiszka`
-  ADD CONSTRAINT `fiszka_ibfk_1` FOREIGN KEY (`twórca`) REFERENCES `logowanie` (`login`);
+  ADD CONSTRAINT `fiszka_ibfk_1` FOREIGN KEY (`tworca`) REFERENCES `logowanie` (`login`);
 
 --
 -- Constraints for table `notatka`
