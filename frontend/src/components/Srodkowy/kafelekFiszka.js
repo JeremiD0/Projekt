@@ -6,7 +6,6 @@ export default function NoteTile(props) {
     props.setNote(props.id);
   }
 
-  // Pobranie daty z deadline
   const deadlineDate = new Date(props.deadline);
   const formattedDate = `${deadlineDate.getFullYear()}-${deadlineDate.getMonth() + 1}-${deadlineDate.getDate()}`;
 

@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react';
 import React from "react";
 import './Srodkowy.css'
 import Fiszki from './fiszki';
-
+import DelNote from './delNote';
 export default class Srodkowy extends React.Component {
     
     
@@ -14,29 +14,7 @@ export default class Srodkowy extends React.Component {
 
             <div className="Srodkowy">
                 
-                <div className="button">
-
-                    <button className="EditBtn"type="submit">
-                        Edytuj
-                    </button>
-
-
-                   
-
-                    <button  className="DelBtn" type="submit">
-                        Usun
-                    </button>
-
-                </div>
-
-
-                <div className="textarea-container">
-
-                    <div className="note">
-                        <Fiszki/>
-                    </div>
-
-                </div>
+               <Fiszki/>
 
 
             </div>

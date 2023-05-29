@@ -51,7 +51,7 @@
     color: black;
   }
 
-  .Srodkowy .AddBtn:focus {
+  .Srodkowy .AddBtn:hover {
     transform: scale(0.95);
     background-color: rgb(20, 224, 105);
     color: black;
@@ -61,16 +61,30 @@
     background-color: rgb(224, 20, 20);
     color: black;
   }
+  .Srodkowy .AddBtn:focus {
+    transform: scale(0.95);
+    background-color: rgb(20, 224, 105);
+    color: black;
+  }
+
 
 .Srodkowy .EditBtn{
     border-top-left-radius: 3em;
     border-bottom-left-radius: 3em;
     
 }
+.Srodkowy .AddBtn{
+  width: 80%;
+  border-radius: 3em;
+  background-color: rgb(20, 224, 105);
+
+  
+}
 
 .Srodkowy .DelBtn{
-    border-top-right-radius: 3em;
-    border-bottom-right-radius: 3em;
+  width: 80%;
+    border-radius: 3em;
+
 }
 
 .Srodkowy button:hover {

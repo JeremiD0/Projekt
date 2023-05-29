@@ -169,6 +169,19 @@ app.get('/api/fiszki', (req, res) => {
     }
   });
 });
+ app.delete('/api/fiszki/delete', (req, res) => {
+    const {elementId} = req.body;
+    db.query(`DELETE FROM fiszka WHERE id = ? `,elementId,(err)=>{
+
+      if (err) {
+        res.status(500);
+      }
+      res.status(200);
+      console.log(elementId)
+
+    })
+      
+  });
   
 
 console.log("Server slucha na porcie 3333")
