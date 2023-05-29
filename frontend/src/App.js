@@ -1,14 +1,24 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import LoginForm from './components/LoginForm/LoginForm';
 import Lewy from './components/Lewy/Lewy'
 import Prawy from './components/Prawy/Prawy'
 import Srodkowy from './components/Srodkowy/Srodkowy'
+import UserForm from './components/UserForm/UserForm.js';
+
+
+
 function App() {
 
+    useEffect(() => {
+        document.title = 'MyNotes'; 
+      }, []);
+      
+
     const [token, setToken] = useState();
+    const [display, setDisplay] = useState(false);
 
-
+   
     if (!token) {
         return <LoginForm setToken={setToken}/>
     }
@@ -17,10 +27,12 @@ function App() {
             setToken(false)
         }/>
     }
-
-    function addUser() {
-    }
-
+    
+    if (display) {
+            return( <UserForm token = {token}/>)
+        
+    } 
+    
   
     return (
         <div className="app">
@@ -36,9 +48,10 @@ function App() {
             <Srodkowy/>
 
             <Prawy/>
+            
 
             <div className='buttonDiv'>
-                <button className='NewUserBtn' data-tooltip="Dodaj nowego uzytkownika" onClick={addUser}></button>
+                <button className='NewUserBtn' data-tooltip="Dodaj nowego uzytkownika" onClick={()=>{setDisplay(!display)}} ></button>
             </div>
 
         </div>

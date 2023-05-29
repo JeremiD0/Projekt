@@ -34,7 +34,7 @@ class Router {
                 if(data && data.length === 1){
                     bcrypt.compare(password, data[0].haslo, (bcryptErr, verified) =>{
                         if (verified){
-                            res.status(200).send(true)
+                            res.status(200).send({"username":username})
                         } 
                         else
                         {

@@ -2,29 +2,30 @@
     background: #00008b;
     color: white;
     border-radius: 30px;
-    height: 865px;
+    height: 85vh;
     width: 15%;
     text-align: center;
     display: inline-block;
-    margin-top: 45px;
-    margin-right: 35px;
-    margin-left: 50px;
-    margin-bottom: 35px;
-    padding-top: 20px;
+    margin-top: 2.5%;
+    margin-right: 2%;
+    margin-left:  2%;
+    margin-bottom: 4%;
+    padding-top: 2%;
     word-wrap: break-word;
+    overflow: auto;
 }
 
 .Prawy input {
     font-size: 15px;
     font-family: Arial;
-    padding: 8px;
+    padding: 2.5%;
     border-style: solid;
     border-color: black;
     border-radius: 10px;
-    width: 44%;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 40px;
+    width: 45%;
+    margin-left: 5%;
+    margin-right: 2%;
+    margin-bottom: 4%;
     background-color: white;
     float: left;
 }
@@ -33,13 +34,16 @@
     cursor: pointer;
 }
 
-.Prawy textarea {
-    resize: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 80%;
+.Prawy textarea{
+    background-color: rgb(133, 128, 168);
     text-align: center;
-    float: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    padding: 3%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    resize: none;
 }
 
 .Prawy textarea:hover {
@@ -48,14 +52,14 @@
 
 .Prawy button {
     text-align: center;
-    margin-bottom: 20px;
-    margin-right: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-bottom: 2%;
+    margin-right: 1.5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 110%;
     border-style: solid;
     background-color: white;
     border-radius: 3em;
@@ -66,29 +70,9 @@
     cursor: pointer;
 }
 
-.btn button {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    margin-right: 0px;  
-}
-
-
-.Prawy textarea{
-    background-color: rgb(133, 128, 168);
-    text-align: center;
-    color: white;
-    font-size: large;
-    border-radius: 2em;
-    padding: 1em;
-    
-}
-
-
-
 .Prawy textarea:focus{
     outline: none;
-    box-shadow: 0px 0px 20px whitesmoke;
+    box-shadow: 0px 0px 10px whitesmoke;
 
 }
 
@@ -98,10 +82,6 @@
 
 
 .Prawy input:focus {
-    box-shadow: 0px 0px 30px white; /* przykładowy cień */
+    box-shadow: 0px 0px 20px white;
     outline: none;
   }
-
-
-
-

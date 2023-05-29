@@ -66,4 +66,3 @@ LoginForm.propTypes = {
     setToken: PropTypes.func.isRequired
 };
 
-// <img src={require('./amw_logo.png')} /> 

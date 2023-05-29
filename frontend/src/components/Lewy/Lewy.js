@@ -1,81 +1,141 @@
 import React from "react";
 import './Lewy.css'
-import { useState } from 'react'
+import {useState, useEffect} from 'react'
+import axios from "axios";
 
+export default function Lewy() {
 
-function MojaKomponenta() {
-    const [dzisiejszaData, setDzisiejszaData] = useState('');
+    const [nazwa, setNazwa] = useState("");
+    const [opis, setOpis] = useState("");
+    const [sala, setSala] = useState("");
+    const [wykonawca, setWykonawca] = useState("");
+    const [deadline, setDeadline] = useState("");
+    const [users, setUsers] = useState([]);
+    const [fiszki, setFiszki] = useState([]);
+    const [note, setNote] = useState(0);
   
-    const ustawDzisiejszaDate = () => {
-      const dzis = new Date();
-      const rok = dzis.getFullYear();
-      const miesiac = (dzis.getMonth() + 1).toString().padStart(2, '0');
-      const dzien = dzis.getDate().toString().padStart(2, '0');
-      const dzisiejszaData = `${rok}-${miesiac}-${dzien}`;
-      setDzisiejszaData(dzisiejszaData);
+    useEffect(() => {
+      fetchData();
+      Refresh();
+      
+    }, [note]);
+  
+    const Refresh = async () => {
+      const response = await axios.get("http://localhost:3333/api/uzytkownicy");
+      setUsers(response.data);
+    };
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3333/api/fiszki');
+        setFiszki(response.data);
+      } catch (error) {
+        console.error('Błąd pobierania danych z API: ', error);
+      }
+    };
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      const fiszkaData = {
+        nazwa: nazwa,
+        opis: opis,
+        sala: sala,
+        wykonawca: wykonawca,
+        deadline: deadline,
+      };
+  
+      try {
+        const response = await axios.post(
+          "http://localhost:3333/api/fiszki/add",
+          fiszkaData
+        );
+       
+        setNazwa("");
+        setOpis("");
+        setSala("");
+        setWykonawca("");
+        setDeadline("");
+      } catch (error) {
+        console.error("Błąd podczas tworzenia fiszki:", error.response.data.error);
+        // Obsługa błędu
+      }
     };
   
     return (
-      <div>
-        <input
-          type="date"
-          value={dzisiejszaData}
-          onChange={(e) => setDzisiejszaData(e.target.value)}
-          className="kalendarz"
-        />
-        <button onClick={ustawDzisiejszaDate}>Ustaw dzisiejszą datę</button>
+      <div className="Lewy">
+        <h1>Stwórz fiszkę:</h1>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <p>Nazwa:</p>
+            <input
+              className="NameInput"
+              type="text"
+              value={nazwa}
+              onChange={(e) => setNazwa(e.target.value)}
+            />
+          </label>
+          <label>
+            <p>Sala:</p>
+            <select
+              className="sala"
+              value={sala}
+              onChange={(e) => setSala(e.target.value)}
+            >
+              <option>Sala 1</option>
+              <option>Sala 2</option>
+              <option>Sala 3</option>
+            </select>
+          </label>
+          <label>
+            <p>Wykonawca:</p>
+            <div className="checkboxes">
+              {users.map((user) => (
+                <div className="checkbox1" key={user._id}>
+                  <input
+                    type="checkbox"
+                    id={user._id}
+                    className="c1"
+                    name="MK"
+                    onChange={() => setWykonawca(user.login)}
+                  />
+                  <div className="c1Child">
+                    {user._id} {user.login}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </label>
+          <label>
+            <p>Deadline:</p>
+            <div>
+
+              
+            <input type="date"
+                value={deadline}
+                onChange={(e)=> setDeadline(e.target.value)}
+                className="kalendarz"/>
+        </div>
+
+          </label>
+          <label>
+                <p>
+                    Opis (opcjonalnie):
+                </p>
+                <input onChange={(e) => setOpis(e.target.value)}
+                    value={opis}
+                    className="NameInput"
+                    type="text"/>
+            </label>
+            <div className="przyciski">
+                <button onClick={()=>{fetchData(); setTimeout(fetchData, 900);}} className="DodBtn" type="submit">
+                    Dodaj
+                </button>
+                <button className="ClearBtn" type="submit"
+                    >
+                    Wyczyść
+                </button>
+            </div>
+        </form>
       </div>
     );
   }
-
-export default function Lewy() 
-    {
-        
-     
-        return ( 
-
-            <div className="Lewy">
-                
-                <h1> Stwórz fiszkę: </h1>
-                <label>
-                    <p> Nazwa: </p>
-                    <input className="NameInput" type="text" />
-                </label>
-                <label>
-                    <p> Sala: </p>
-                    <select className="sala">
-                        <option> Sala 1 </option>
-                        <option> Sala 2 </option>
-                        <option> Sala 3 </option>
-                    </select>
-                </label>
-                <label >
-                    <p> Wykonawca: </p>
-                    
-                    
-                    <div className="checkbox1">
-                    <input type="checkbox" id ="MK" className="c1" name="MK"/> <div className="c1Child">Michał Kucko</div>
-                    </div>
-                    
-                    <div className="checkbox1">
-                    <input type="checkbox" id ="XX" className="c1" name="XX"/> <div className="c1Child">Pan X</div>
-                    </div>
-                    
-                   
-                    
-                </label>
-                <label>
-                    <p> Deadline: </p>
-                    {MojaKomponenta()}
-                </label>
-                <label>
-                    <p> Opis (opcjonalnie): </p>
-                    <input className="NameInput" type="text" /> 
-                </label>
-                <div>
-                    <button type="submit"> Dodaj </button> <button type="submit"> Wyczyść </button>
-                </div>
-            </div>
-        
-        )
- }
