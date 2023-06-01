@@ -1,0 +1,138 @@
+.Srodkowy {
+    background-image: url(bground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 124%;
+    background-position-x: 50%;
+    background-position-y: 60%;   
+    color: white;
+    border-radius: 30px;
+    height: 87vh;
+    display: inline-block;
+    width: 55%;
+    text-align: center;
+    margin-top: 2.5%;
+    margin-right: 2%;
+    margin-left:  2%;
+    margin-bottom: 4%;
+    padding-top: 1%;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+.Srodkowy textarea {
+    resize: none;
+    float: center;
+    text-align: center;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.Srodkowy button {
+    border: 0px;
+    color: rgb(176, 176, 176);
+    font-weight: 600;
+    font-size: 110%;
+    background-color: white;
+    width: 25em;
+    justify-content: space-between;
+    height: 3em;
+    background-color: rgb(0, 0, 71);
+    transition: transform 0.2s;
+    margin-bottom: 3%;
+
+}
+
+.Srodkowy .EditBtn:hover {
+    transform: scale(0.95);
+    background-color: rgb(0, 98, 255);
+    color: black;
+  }
+
+  .Srodkowy .AddBtn:hover {
+    transform: scale(0.95);
+    background-color: rgb(20, 224, 105);
+    color: black;
+  }
+  .Srodkowy .DelBtn:hover {
+    transform: scale(0.95);
+    background-color: rgb(224, 20, 20);
+    color: black;
+  }
+  .Srodkowy .AddBtn:focus {
+    transform: scale(0.95);
+    background-color: rgb(20, 224, 105);
+    color: black;
+  }
+
+
+.Srodkowy .EditBtn{
+    border-top-left-radius: 3em;
+    border-bottom-left-radius: 3em;
+    
+}
+.Srodkowy .AddBtn{
+  width: 80%;
+  border-radius: 3em;
+  background-color: rgb(20, 224, 105);
+
+  
+}
+
+.Srodkowy .DelBtn{
+  width: 80%;
+  border-radius: 3em;
+}
+
+.Srodkowy button:hover {
+  cursor: pointer;
+}
+
+.Srodkowy .Fiszka:hover{
+  outline: none;
+  border: 0px ;
+}
+.Srodkowy .Fiszka:focus{
+  outline: none;
+  border: 0px ;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+
+.Srodkowy .Fiszka{
+  font-family: Helvetica;
+  font-weight:bolder;
+  padding: 20px;
+  text-align: center;
+  color: black;
+  width: 90%;
+  height: 7em;
+  max-height: 0.3em;
+  font-size:larger;
+  border-radius: 2em;
+  transition: max-height 0.3s ease;
+}
+.Srodkowy .Fiszka:focus{
+  max-height: 7em;
+
+}
+.Srodkowy textarea:hover{
+  cursor: default;
+}
+
+.Srodkowy .HisBtn {
+  width: 80%;
+  border-radius: 3em;
+}
+
+.Srodkowy .HisBtn:hover {
+  transform: scale(0.95);
+  background: rgba(0,5,98,1);
+}
+

@@ -1,0 +1,307 @@
+body {
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,25,167,1) 0%, rgba(0,5,98,1) 58%);
+    height: 100vh;
+    max-height: fit-content;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+.login-wrapper {
+    border: solid;
+    border-color: black;
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,25,167,1) 0%, rgba(0,5,98,1) 0%);
+    margin: auto;
+    margin-top: 15%;
+    width: 20em;
+    padding-top: 2.5%;
+    padding-bottom: 1.8%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+}
+
+.login-wrapper input {
+    font-size: 100%;
+    font-family: Arial;
+    padding: 2.5%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.login-wrapper input:hover {
+    cursor: pointer;
+}
+
+.login-wrapper input:focus {
+    font-size: 103%;
+    padding: 2.5%;
+}
+
+.login-wrapper h1 {
+    font-size: 200%;
+    margin-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    text-align: center;
+}
+
+.login-wrapper p {
+    color: white;
+    margin-left: 7%;
+    font-weight: 600;
+}
+
+.login-wrapper span {
+    margin-left: 15%;
+    color: white;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.login-wrapper button {
+   
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 38%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+    font-weight: 600;
+    border-style: solid;
+    background-color: white;
+}
+
+.login-wrapper button:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+
+.buttonDiv{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;    
+}
+
+.buttonDiv .LogOutBtn{
+    text-align: left;
+    padding: 20px;
+    background-color: red;
+    font-size: 2em;
+    border-bottom-right-radius: 3em;
+}
+
+.buttonDiv .LogOutBtn::after{
+    content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 15px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+    
+    }
+.buttonDiv .LogOutBtn:hover::after{
+        opacity: 1;
+        visibility: visible;
+}
+
+.buttonDiv .LogOutBtn:hover {
+    cursor: pointer;
+}
+
+.buttonDiv .NewUserBtn{
+    text-align: left;
+    padding: 20px;
+    background-color: green;
+    font-size: 2em;
+    border-bottom-left-radius: 3em;
+}
+
+.buttonDiv .NewUserBtn::after{
+content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+
+}
+
+.buttonDiv .NewUserBtn:hover::after{
+    opacity: 1;
+    visibility: visible;
+}
+
+.buttonDiv .NewUserBtn:hover {
+    cursor: pointer;
+}
+
+.login-wrapper2 {
+    border: solid;
+    border-color: black;
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,25,167,1) 0%, rgba(0,5,98,1) 0%);
+    margin: 5% 40% 0 40%;
+    width: 20em;
+    padding-top: 2.5%;
+    padding-bottom: 1.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.login-wrapper2 input {
+    font-size: 100%;
+    font-family: Arial;
+    padding: 2.5%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.login-wrapper2 input:hover {
+    cursor: pointer;
+}
+
+.login-wrapper2 input:focus {
+    font-size: 103%;
+    padding: 2.5%;
+}
+
+.login-wrapper2 h1 {
+    font-size: 200%;
+    margin-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    text-align: center;
+}
+
+.login-wrapper2 p {
+    color: white;
+    margin-left: 7%;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.login-wrapper2 span {
+    margin-left: 15%;
+    color: white;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.login-wrapper2 button {
+   
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 38%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+    font-weight: 600;
+    border-style: solid;
+    background-color: white;
+}
+
+.login-wrapper2 button:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+
+.buttonDiv1{
+    display: flex;
+    align-items: flex-start;
+}
+.buttonDiv1 .backBtn{
+    text-align: left;
+    padding: 20px;
+    background-color: red;
+    font-size: 2em;
+    border-bottom-right-radius: 3em;
+}
+
+.buttonDiv1 .backBtn::after{
+    content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 15px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+    
+    }
+.buttonDiv1 .backBtn:hover::after{
+        opacity: 1;
+        visibility: visible;   
+}
+
+.login-wrapper2 li {
+    color: white;
+}
+
+.red textarea{
+    background-color: rgb(159, 23, 23);
+}
+
+.red textarea:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+.orange textarea{
+    background-color: rgb(242, 78, 18);
+}
+
+.orange textarea:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+.white textarea{
+    background-color: rgb(0, 174, 255);
+}
+
+.white textarea:hover{
+    box-shadow: 0px 0px 20px white;
+}
+
+.grey textarea {
+    background-color: rgb(0, 130, 252);
+}
+
+.grey textarea:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+.error_span {
+    color: white;
+    text-decoration: underline;
+    font-weight: 600;
+    text-align: center;
+}
